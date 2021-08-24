@@ -4,7 +4,7 @@ import store from '@/store'
 import router from '@/router'
 import { getTimeStamp } from '@/utils/auth'
 
-const TimeOut = 2
+const TimeOut = 3600 * 24
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
