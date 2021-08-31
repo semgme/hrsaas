@@ -1,4 +1,4 @@
-export const imagerror = {
+export const imageerror = {
   inserted(dom, options) {
     dom.src = dom.src || options.value
     dom.onerror = function() {

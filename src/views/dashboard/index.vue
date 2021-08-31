@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">name: {{ name }}</div>
-  </div>
-</template>
+    <ImageUpload />
+  </div></template>
 
 <script>
 import { mapGetters } from 'vuex'

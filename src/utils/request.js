@@ -40,10 +40,9 @@ service.interceptors.response.use(
   },
   (error) => {
     if (error.response) {
-      debugger
+      console.log(error.response)
     }
     if (error.response && error.response.data && error.response.data.code === 10002) {
-      debugger
       store.dispatch('user/logout')
       router.push('/login')
     } else {

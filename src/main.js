@@ -5,6 +5,8 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+import componet from '@/components'
+import * as filters from '@/filters'
 
 import '@/styles/index.scss'
 
@@ -12,6 +14,7 @@ import App from './App'
 import store from './store'
 import router from './router'
 import * as directives from '@/directives/index'
+import CheckPermission from '@/mixin/checkPermission'
 
 import '@/icons' // icon
 import '@/permission'
@@ -26,6 +29,13 @@ Vue.config.productionTip = false
 Object.keys(directives).forEach(key => {
   Vue.directive(key, directives[key])
 })
+
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+
+Vue.use(componet)
+Vue.mixin(CheckPermission)
 
 new Vue({
   el: '#app',

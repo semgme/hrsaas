@@ -2,10 +2,10 @@ import Layout from '@/layout'
 
 export default {
   path: '/setting',
-  // name: 'setting',
+  name: 'settings',
   component: Layout,
   children: [{
-    path: '',
+    path: '/setting/',
     component: () => import('@/views/setting'),
     meta: {
       title: '设置',

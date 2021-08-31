@@ -39,24 +39,32 @@ export const constantRoutes = [
     }]
   },
 
+  {
+    path: '/import',
+    component: Layout,
+    hidden: true,
+    children: [{
+      path: '', // 二级路由path什么都不写 表示二级默认路由
+      component: () => import('@/views/import')
+    }]
+  }
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
 ]
 
 export const asyncRoutes = [
   approvalsRouter,
   departmentsRouter,
+  settingRouter,
   employeesRouter,
   permissionRouter,
   attendancesRouter,
   salarysRouter,
-  settingRouter,
   socialRouter
 ]
 
 const createRouter = () => new Router({
   scrollBehavior: () => ({ y: 0 }),
-  routes: [...constantRoutes, ...asyncRoutes]
+  routes: [...constantRoutes]
 })
 
 const router = createRouter()

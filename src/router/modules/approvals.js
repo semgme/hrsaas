@@ -2,11 +2,10 @@ import Layout from '@/layout'
 
 export default {
   path: '/approvals',
-  // name: 'approvals',
+  name: 'approvals',
   component: Layout,
   children: [{
-    path: '',
-    name: 'approvals',
+    path: '/approvals/',
     component: () => import('@/views/approvals'),
     meta: {
       title: '审批',
